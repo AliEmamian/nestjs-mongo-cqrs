@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "65d1c882-ce31-4ab3-99b9-4aa273491861",
+		"name": "nestjs-mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4575461",
+		"_collection_link": "https://solar-flare-256827.postman.co/workspace/epanel~49bc7d8c-0fca-4684-a20b-cf43b560305f/collection/4575461-65d1c882-ce31-4ab3-99b9-4aa273491861?action=share&source=collection_link&creator=4575461"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n  \"username\": \"text2\",\n  \"password\": \"mock2\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/user/signup",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n  \"username\": \"text2\",\n  \"password\": \"mock2\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/user/signing",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"signing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create todo list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"list ali\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-list",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create todo item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"item h\",\n    \"description\":\"desc1\",\n    \"priority\":2,\n    \"todoListId\":\"665c3c5a67e1c2506ad1e31c\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-item",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update todo list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"emamian\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-list/:id",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-list",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "665c3c5a67e1c2506ad1e31c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update todo item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"item D\",\n    \"priority\":4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-item/:id",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-item",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "665c3c8a67e1c2506ad1e325"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get todo list of user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-list",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get todo Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-item/:id",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-item",
+						":id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "665b084621d091d8dadc267d",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "665c3c8a67e1c2506ad1e325"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get items of todo list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-item/todo-list/:id",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-item",
+						"todo-list",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "665c3c5a67e1c2506ad1e31c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-item/:id",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-item",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "665c247185ef6d1318976a88"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cHIiOiJ1c2VyIiwidWlkIjoiNjY1OGIxOWUxM2NkZmNhYTc0N2U5ZmQ0IiwidXNlcm5hbWUiOiJ0ZXh0MyIsImlhdCI6MTcxNzA5MjY2OCwiZXhwIjoxNzMzMDc2NjY4fQ.qpdFlzYG9DUqU4SS4FQwLclAqF7OI3zV00vmXzO7cG8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/todo-list/:id",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"todo-list",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "665ad9beb8dfcd54a5707484"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "heartbeat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/api/v1/heartbeat",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"heartbeat"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
