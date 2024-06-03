@@ -1,42 +1,113 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication, ValidationPipe } from '@nestjs/common';
-import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
-import { TodoItemService } from '../src/modules/todo-item/todo-item.service';
-import { HealthCheckController } from '../src/modules/health-check/health-check.controller';
-let requestResult: any;
+const axios = require('axios').default;
 
-describe('AppController (e2e)', () => {
-  let app: INestApplication;
-  let service: TodoItemService;
-  let healthService: HealthCheckController
+const baseurl = 'http://127.0.0.1:5000/api/v1'
+const username = "ali"
+const password = "emamian"
+
+
+describe.only('Test', () => {
+  let user: any;
+  let todo: any;
+  let todoItem: any;
+
   beforeEach(async () => {
+  });
 
+  it('signup', async () => {
+    user = await axios({
+      method: 'POST',
+      url: baseurl + '/user/signup',
+      data: {
+        "username": username,
+        "password": password
+      }
+    })
 
-    const module: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
-    }).compile();
-    app = module.createNestApplication();
-    app.useGlobalPipes(
-      new ValidationPipe({
-        forbidUnknownValues: true,
-        transform: true,
-        whitelist: true,
-      }),
-    );
-    await app.init();
-    healthService = module.get<HealthCheckController>(HealthCheckController);
+    expect(user.status).toBe(201);
+    expect(user.data.status).toBe(200);
+
+  });
+  it('signing', async () => {
+    user = await axios({
+      method: 'POST',
+      url: baseurl + '/user/signing',
+      data: {
+        "username": username,
+        "password": password
+      }
+    })
+
+    expect(user.status).toBe(200);
+    expect(user.data.status).toBe(200);
 
   });
 
-  it('/heartbeat (GET)', () => {
-   
-    jest.spyOn(healthService, 'checkHealth').mockImplementation(() => true);
-    expect(healthService.checkHealth()).toBe(true);
+  it('create todo-list', async () => {
 
-    // requestResult = await request(app.getHttpServer())
-    //   .get('/')
-    //   .expect(200)
-    //   .expect('Hello World!');
+    todo = await axios({
+      method: 'POST',
+      url: baseurl + '/todo-list',
+      headers: {
+        "Authorization": "Bearer " + user.data.data.accessToken
+      },
+      data: {
+        "title": 'todo list 1',
+      }
+    })
+
+    expect(todo.status).toBe(201);
+    expect(todo.data.status).toBe(200);
+
+  });
+  it('get todo-list', async () => {
+
+    todo = await axios({
+      method: 'GET',
+      url: baseurl + '/todo-list',
+      headers: {
+        "Authorization": "Bearer " + user.data.data.accessToken
+      },
+
+    })
+
+    expect(todo.status).toBe(200);
+    expect(todo.data.status).toBe(200);
+
+  });
+
+  it('create todo-item', async () => {
+
+    todoItem = await axios({
+      method: 'POST',
+      url: baseurl + '/todo-item',
+      headers: {
+        "Authorization": "Bearer " + user.data.data.accessToken
+      },
+      data: {
+        "title": "item 1",
+        "description": "desc1",
+        "priority": 2,
+        "todoListId": todo.data.data[0]._id
+      }
+    })
+
+    expect(todo.status).toBe(200);
+    expect(todo.data.status).toBe(200);
+
+  });
+
+  it('get todo-item of todo-list', async () => {
+
+    todoItem = await axios({
+      method: 'GET',
+      url: baseurl + '/todo-item/todo-list/'+todo.data.data[0]._id,
+      headers: {
+        "Authorization": "Bearer " + user.data.data.accessToken
+      },
+    })
+
+    expect(todo.status).toBe(200);
+    expect(todo.data.status).toBe(200);
+
   });
 });
